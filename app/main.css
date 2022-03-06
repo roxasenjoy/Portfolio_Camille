@@ -1,0 +1,1551 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Balsamiq Sans Regular", sans-serif;
+}
+
+@font-face {
+    font-family: "Balsamiq Sans Regular";
+    src: url("fonts/BalsamiqSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Balsamiq Sans Bold";
+    src: url("fonts/BalsamiqSans-Bold.ttf");
+}
+
+:root {
+    /** Couleurs **/
+    --darkBlue: #263C59;
+    --blue: #0d0f11;
+    --lightBlue: #74DDFF;
+    --white: #FFF;
+    /* La police d'écriture **/
+    --regular: "Balsamiq Sans Regular", sans-serif;
+    --bold: "Balsamiq Sans Bold", sans-serif;
+    /** Taille des textes **/
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+ition {
+    transition: all .75s ease-in-out;
+}
+
+
+/**************
+    Header
+***************/
+
+header {
+    background-color: var(--darkBlue);
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-container {
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 4em;
+}
+
+header h2 {
+    font-size: 3em;
+    margin: 40px 0 30px 0;
+}
+
+header .icons {
+    display: flex;
+    justify-content: center;
+    gap: 0 75px;
+}
+
+header .icons i {
+    font-size: 3em;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+header .icons span:hover i {
+    cursor: pointer;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
+header .bubble {
+    position: absolute;
+}
+
+header .top-left {
+    top: -5%;
+    left: -10%;
+}
+
+header .bottom-right {
+    bottom: -7.5%;
+    right: -10%;
+}
+
+header .top-right {
+    top: -10%;
+    right: -10%;
+}
+
+header .bottom-left {
+    bottom: -7.5%;
+    left: -10%;
+    right: 75%;
+}
+
+header svg {
+    width: 500px;
+}
+
+
+/* Waves */
+
+.reverseWave {
+    position: relative;
+    transform: rotate(180deg);
+}
+
+.reverseWave svg {
+    margin-bottom: -6px;
+}
+
+.reverseWave svg path {
+    position: absolute;
+    transform: translateY(50px);
+}
+
+.normalWave {
+    position: relative;
+}
+
+.normalWave svg {
+    margin-bottom: -6px;
+}
+
+.normalWave svg path {
+    position: absolute;
+}
+
+canvas {
+    display: block;
+}
+
+header .box {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+
+.box span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.box span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/**************
+    A propos
+***************/
+
+.about .titleSection {
+    font-size: 4em;
+    color: var(--darkBlue);
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.about .container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-direction: row;
+}
+
+.about .container p {
+    color: var(--darkBlue);
+    font-size: 2em;
+    text-align: center;
+    width: 70%;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .imgContainer {
+    margin: 20PX AUTO;
+}
+
+.about .imgContainer::before {
+    content: '';
+    display: block;
+    min-height: 200px;
+    min-width: 200px;
+    width: 40vh;
+    height: 40vh;
+    background-color: var(--blob);
+    box-shadow: white;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    background-image: url("img/aboutHead.jpg");
+    background-size: cover;
+}
+
+
+/************************
+    Mes compétences
+***************************/
+
+.skill {
+    position: relative;
+}
+
+.skill .container {
+    background-color: var(--darkBlue);
+    color: var(--white);
+    padding: 0 0 50px 0;
+}
+
+.skill .container h3 {
+    font-size: 4em;
+    text-align: center;
+    padding: 0.75em 0;
+}
+
+.skill .container .box {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.skill .container .box .item {
+    flex-grow: 3;
+    text-align: center;
+}
+
+.skill .container .box .item h4 {
+    font-size: 3em;
+    padding: 20px;
+}
+
+.skill .container .item ul {
+    list-style: none;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.skill .container .item ul li {
+    margin: 15px 0;
+}
+
+.skill .container .item ul hr {
+    content: "";
+    margin: auto;
+    height: 0.5px;
+    width: 100px;
+    background-color: white;
+    text-align: center;
+}
+
+.skill .bubble {
+    position: absolute;
+    z-index: 50;
+    width: 15%;
+}
+
+.skill .top-left {
+    top: 10%;
+    left: -5%;
+}
+
+.skill .bottom-right {
+    bottom: 16%;
+    right: 0%;
+}
+
+.skill .top-right {
+    top: 16%;
+    right: 0%;
+}
+
+.skill .bottom-left {
+    bottom: 10%;
+    left: 5%;
+    right: 0%;
+}
+
+.skill .middle {
+    bottom: 20%;
+    right: 40%;
+    top: 55%;
+}
+
+
+/*********************************
+    Logiciels et applications
+**********************************/
+
+.software h3 {
+    font-size: 4em;
+    color: var(--darkBlue);
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.software .container {
+    width: 90%;
+    margin: auto;
+}
+
+.software .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.software .row div {
+    flex: 3 30%;
+    margin: 10px;
+}
+
+.software .row div:nth-child(-n+3)::before,
+.software .row div:nth-last-child(-n+3)::before {
+    margin: auto;
+}
+
+.software .imgContainer::before {
+    content: '';
+    display: block;
+    min-height: 200px;
+    min-width: 200px;
+    width: 20vh;
+    height: 20vh;
+    background-color: var(--blob);
+    box-shadow: white;
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    background-size: cover;
+}
+
+.canva::before {
+    background-image: url("img/canva.png");
+}
+
+.gsuite::before {
+    background-image: url("img/gsuite.jpg");
+}
+
+.illustrator::before {
+    background-image: url("img/illustrator.jpg");
+}
+
+.mailchimp::before {
+    background-image: url("img/mailchimp.jpg");
+}
+
+.office::before {
+    background-image: url("img/office365.png");
+}
+
+.photoshop::before {
+    background-image: url("img/photoshop.png");
+}
+
+.trello::before {
+    background-image: url("img/trello.png");
+}
+
+.xd::before {
+    background-image: url("img/xd.png");
+}
+
+.plus::before {
+    background-image: url("img/plus.png");
+}
+
+
+/************************
+    Mes expériences
+***************************/
+
+.experience {
+    position: relative;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.experience h3 {
+    font-size: 4em;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.experience ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    transform: rotate(-3deg);
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.experience ul:hover {
+    cursor: grab !important;
+}
+
+.experience ul li {
+    font-size: 6em;
+    opacity: .5;
+    line-height: 75%;
+    position: absolute;
+}
+
+.experience ul li:first-child {
+    left: 45%;
+}
+
+.experience ul li:nth-child(2) {
+    left: 65%;
+}
+
+.experience ul li:nth-child(3) {
+    left: 85%;
+}
+
+.experience ul li:nth-child(4) {
+    left: 105%;
+}
+
+.experience ul li:nth-child(5) {
+    left: 125%;
+}
+
+.experience ul li:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.experience ul li.active {
+    opacity: 1;
+    border-bottom: 3px solid white;
+}
+
+.experience ul li:not(.active)::before {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    transition: width .5s, opacity .5s;
+}
+
+.experience ul li:not(.active):hover::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+}
+
+.experience .dateContainer {
+    transform: translateX(0);
+    padding-bottom: 100px;
+}
+
+.experience .jobs:not(.active) {
+    display: none;
+}
+
+
+/****************************
+* Description des expériences
+****************************/
+
+.containerJobs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.jobs .visitAndCo {
+    background-image: url("img/visitandco.jpg");
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    background-position: center;
+    content: "";
+}
+
+.jobs .visitAndCoPresentation {
+    border: solid 3px white;
+    background: white;
+    margin-right: 30px;
+    height: 50%;
+}
+
+.jobs .visitAndCoPresentation p {
+    color: var(--darkBlue);
+    font-size: 2.5em;
+    text-align: center;
+    font-family: var(--bold);
+}
+
+
+/****************
+    Visit & Co
+*****************/
+
+.contentVisitAndCo .nameJob {
+    font-size: 3em;
+}
+
+.contentVisitAndCo .separationJob {
+    width: 25%;
+    height: 3px;
+    background: white;
+    margin: 15px 0;
+}
+
+.contentVisitAndCo .descriptionJob {
+    font-size: 1.5em;
+}
+
+.containerJobs .second {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding: 20px;
+}
+
+.first,
+.third {
+    font-size: 3em;
+    width: 5%;
+    text-align: center;
+}
+
+.first:hover,
+.third:hover {
+    cursor: pointer;
+}
+
+
+/****************************
+*       MES CRÉATION
+****************************/
+
+.creation h3 {
+    font-size: 4em;
+    text-align: center;
+    padding: 0.75em 0;
+    color: var(--darkBlue);
+}
+
+
+/* Blops */
+
+.creation #creationContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 3;
+}
+
+.creation svg {
+    width: 20em;
+    height: 20em;
+    flex: 1 1 33%;
+}
+
+.creation g {
+    filter: drop-shadow( 5px 5px 3px rgba(0, 0, 0, .30));
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.creation g:hover {
+    cursor: pointer;
+    transition: all .75s ease-in-out;
+}
+
+.creation g:hover path {
+    fill: rgb(93, 173, 226);
+    transition: all .75s ease-in-out;
+}
+
+.creation g path {
+    transition: all .75s ease-in-out;
+}
+
+.creation svg:nth-child(4),
+.creation svg:nth-child(5) {
+    flex: 1 0 50%;
+}
+
+
+/****************************
+*       CONTACT
+****************************/
+
+.contact {
+    background-color: var(--darkBlue);
+    position: relative;
+}
+
+.contact h3 {
+    font-size: 4em;
+    text-align: center;
+    padding: 0.75em 0;
+    color: var(--white);
+}
+
+.contact form {
+    width: 45%;
+    margin: auto;
+    text-align: center;
+}
+
+.contact form input,
+.contact form textarea {
+    border-radius: 15px;
+    border: 2px solid white;
+    font-size: 20px;
+    color: var(--white);
+    background-color: rgba(38, 60, 89);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    z-index: 50;
+    position: relative;
+}
+
+.contact form .error {
+    border: 2px solid red !important;
+}
+
+.contact form button {
+    background-color: var(--lightBlue);
+    padding: 15px 50px;
+    border-radius: 15px;
+    border: none;
+    margin: auto;
+    color: var(--darkBlue);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    z-index: 50;
+    position: relative;
+}
+
+.contact form button:hover {
+    cursor: pointer;
+    transform: scale(1.09);
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    color: var(--white);
+    opacity: .5;
+}
+
+
+/* Bubble */
+
+.contact svg {
+    width: 250px;
+}
+
+.contact .bubble {
+    position: absolute;
+    z-index: 0;
+}
+
+
+/* Position des bubbles */
+
+.contact .tl {
+    top: 10%;
+    left: 10%;
+}
+
+.contact .br {
+    bottom: 10%;
+    right: 5%;
+}
+
+.contact .tr {
+    top: -0%;
+    right: -0%;
+}
+
+.contact .bl {
+    bottom: -0%;
+    left: 2%;
+}
+
+
+/********************************************
+        Poup de validation de message
+*********************************************/
+
+.popup {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    color: white;
+    display: flex;
+    z-index: 99;
+    width: 300px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    border-radius: 5px;
+    animation: fadeIn 1.5s;
+    -webkit-animation: fadeIn 1.5s;
+    -moz-animation: fadeIn 1.5s;
+    -o-animation: fadeIn 1.5s;
+    -ms-animation: fadeIn 1.5s;
+}
+
+.valid {
+    background-color: #28a745;
+    border-left: 7.5px solid #19692c;
+}
+
+.isComing {
+    background-color: #ffc107;
+    border-left: 7.5px solid #b98b02;
+}
+
+.notValid {
+    background-color: red;
+    border-left: 7.5px solid rgb(175, 0, 0);
+}
+
+.popup p {
+    font-size: 20px;
+}
+
+.popup .type {
+    font-weight: 500;
+    font-family: var(--bold);
+}
+
+.popup i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.fadeOut {
+    animation: fadeOut 1.5s;
+    opacity: 0;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        bottom: 0;
+    }
+    to {
+        opacity: 0;
+        bottom: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: 20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+
+/******************
+        Footer
+*******************/
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    color: var(--darkBlue);
+    font-size: 1em;
+}
+
+footer p a {
+    text-decoration: none;
+}
+
+
+/*********************
+    Autres pages
+***********************/
+
+.headerResponsive {
+    display: none;
+}
+
+.headerPages {
+    position: relative;
+}
+
+.navContainer {
+    position: absolute;
+    left: 0;
+    display: flex;
+    top: 0;
+    justify-content: space-around;
+    width: 100%;
+    height: 35%;
+    align-items: center;
+}
+
+.navContainer li {
+    list-style: none;
+}
+
+.navContainer li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.5em;
+    transition: all .25s ease-in-out;
+}
+
+.navContainer li:hover a {
+    color: var(--lightBlue);
+    transition: all .25s ease-in-out;
+}
+
+.navContainer li a.active {
+    color: var(--lightBlue);
+}
+
+.hamburger {
+    display: none;
+}
+
+
+/*******************************
+           Visite & Co
+********************************/
+
+
+/* Paramètre de la page de base des entreprises */
+
+.containerCompany {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    color: var(--darkBlue);
+}
+
+
+/* Placement du nom de l'entreprise */
+
+.titleCompany {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+/* Toutes les pages entreprise avec une description et une image */
+
+.companyWithImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row
+}
+
+.companyWithImage p {
+    margin-right: 50px;
+}
+
+.companyWithImage img {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* Tous les textes font la même taille */
+
+.containerCompany p {
+    font-size: 1.4em;
+}
+
+.containerCompany .presentation {
+    margin-top: 20px;
+}
+
+.containerCompany section {
+    margin-bottom: 100px;
+}
+
+.containerCompany section h3 {
+    font-size: 1.75em;
+    text-decoration: underline;
+    text-align: left;
+}
+
+.scroll-arrow {
+    width: 5%;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    opacity: 0.5;
+    font-size: 34px;
+    transition: 0.2s;
+}
+
+.scroll-arrow:hover {
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.containerCompany .containerSlider {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.containerCompany ul {
+    width: 85%;
+    scroll-behavior: smooth;
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.containerCompany ul::-webkit-scrollbar {
+    display: none;
+}
+
+.containerCompany li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.containerCompany li,
+.containerCompany img {
+    width: 500px;
+}
+
+.companyWithImage img {
+    width: 300px;
+}
+
+
+/******************************************
+                Gifs Visit & Co
+********************************************/
+
+.containerGifs,
+.containerLogo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.containerGifs img {
+    order: 3;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+
+.containerLogo .imgElement {
+    height: initial;
+    margin: 20px;
+    width: 350px;
+}
+
+.imgElement img {
+    width: 350px;
+}
+
+.containerLogo figcaption {
+    width: 350px;
+    text-align: center;
+}
+
+
+/********************************************
+            Les cérises du café
+*********************************************/
+
+#logoCerisesDuCafe {
+    width: 300px;
+    height: 200px !important;
+}
+
+.cerises .container,
+.website .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.cerises .container .imagesContainer,
+.website .container .imagesContainer {
+    order: 1;
+    width: 33%;
+}
+
+.website .presentation {
+    margin-bottom: 35px;
+}
+
+.website .container .imagesContainer img {
+    border: var(--darkBlue) solid 1px;
+}
+
+.cerises .container .imagesContainer img {
+    height: 300px;
+    width: 300px;
+}
+
+
+/********************************************
+                TABLETTE
+*********************************************/
+
+@media (max-width: 1200px) {
+    header svg {
+        width: 350px;
+    }
+    header .icons span:hover i {
+        font-size: 50px;
+    }
+    .imgElement img {
+        width: 200px;
+    }
+    .containerLogo figcaption {
+        width: 200px;
+    }
+    .containerLogo .imgElement {
+        width: initial;
+    }
+}
+
+@media(max-width: 1000px) {
+    .experience ul li:first-child {
+        left: 40%;
+    }
+    .experience ul li:nth-child(2) {
+        left: 90%;
+    }
+    .experience ul li:nth-child(3) {
+        left: 140%;
+    }
+    .experience ul li:nth-child(4) {
+        left: 190%;
+    }
+    .experience ul li:nth-child(5) {
+        left: 240%;
+    }
+}
+
+
+/********************************************
+                TELEPHONE
+*********************************************/
+
+@media (max-width: 900px) {
+    /************
+        About 
+    ************/
+    .about .container {
+        flex-direction: column;
+    }
+    .about .container p {
+        font-size: 1.5em;
+        width: 100%;
+        margin-right: 0px;
+    }
+    .about .container #imgUser {
+        text-align: center;
+        margin: auto;
+    }
+    .imgContainer::before {
+        width: 30vh;
+        height: 30vh;
+    }
+    .skill .container .item ul {
+        font-size: 1em;
+    }
+    .skill .container .box .item h4 {
+        font-size: 2em;
+        padding: 20px;
+    }
+    .software .row div {
+        flex: 3 30%;
+        margin: 10px;
+    }
+    .software .row div::before {
+        margin: auto;
+    }
+    /****************
+        Visit & Co
+    *****************/
+    .contentVisitAndCo .nameJob {
+        font-size: 2em;
+    }
+    .contentVisitAndCo .separationJob {
+        margin: 15px 0;
+    }
+    .contentVisitAndCo .descriptionJob {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .containerJobs .second {
+        flex-direction: column-reverse;
+        width: 95%;
+        margin: auto;
+    }
+    .jobs .visitAndCo {
+        width: 100%;
+        height: 400px;
+        background-position: center;
+        content: "";
+    }
+    .jobs .visitAndCoPresentation {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .first,
+    .third {
+        display: none;
+    }
+    /**************************
+            Mes créations
+    *****************************/
+    .creation svg {
+        flex: 1 1 50%;
+        height: initial;
+    }
+    /***************************
+            Contact
+    ***************************/
+    .contact form {
+        width: 85%;
+    }
+    /* Position des bubbles */
+    .contact .tl {
+        top: 15%;
+        left: 5%;
+    }
+    .contact .br {
+        bottom: 10%;
+        right: 5%;
+    }
+    .contact .tr {
+        top: 10%;
+        right: 5%;
+    }
+    .contact .bl {
+        bottom: 0%;
+        left: 0%;
+    }
+    /************************
+        Header des expériences
+    ***************************/
+    .navContainer li a {
+        display: none;
+    }
+    .headerResponsive {
+        display: initial;
+    }
+    #svg {
+        display: none;
+    }
+    nav {
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        padding: 50px;
+        background-color: var(--darkBlue);
+        transform: translateX(-100%);
+        transition: all 0.2s ease-out;
+        z-index: 9;
+    }
+    nav ul {
+        list-style-type: none;
+        text-align: right;
+    }
+    nav li {
+        padding: 12px 0;
+    }
+    nav a {
+        position: relative;
+        text-decoration: none;
+        color: var(--white);
+        transition: all .25s ease-in-out;
+    }
+    nav a:hover {
+        color: var(--lightBlue);
+        transition: all .25s ease-in-out;
+    }
+    nav a.active {
+        color: var(--lightBlue);
+    }
+    nav.open {
+        transform: translateX(0);
+    }
+    .containerHamburger {
+        background: red;
+    }
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 35px;
+        background: none;
+        box-shadow: none;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+        z-index: 10;
+        display: initial;
+        background: var(--darkBlue);
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    .hamburger span {
+        position: absolute;
+        left: 50%;
+        width: 26px;
+        height: 2px;
+        background-color: white;
+    }
+    .hamburger span:nth-child(1) {
+        top: 8px;
+        transform: translateX(-50%) translateY(0);
+        transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s, transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+    }
+    .hamburger span:nth-child(2) {
+        top: 16px;
+        opacity: 1;
+        transform: translateX(-50%);
+    }
+    .hamburger span:last-child {
+        top: 24px;
+        transform: translateX(-50%) translateY(0);
+        transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s, transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+    }
+    .hamburger.open span:nth-child(1) {
+        top: 50%;
+        transform: translateX(-50%) translateY(0) rotate(45deg);
+        transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87), transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.open span:last-child {
+        top: 50%;
+        transform: translateX(-50%) translateY(0) rotate(-45deg);
+        transition: bottom 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87), transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+    }
+    /***************************************
+        Design des pages entreprises
+    **************************************/
+    /* Toutes les pages entreprise avec une description et une image */
+    .companyWithImage {
+        flex-direction: column;
+    }
+    .companyWithImage p {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    /*******************************************
+                Design
+    ********************************************/
+    .containerGifs {
+        flex-direction: row;
+    }
+    .containerGifs img {
+        order: initial;
+        flex-grow: initial;
+        width: 150px;
+        height: initial;
+    }
+    /*******************************************
+            La minute du propriétaire
+    ********************************************/
+    .containerLogo .imgElement {
+        width: initial;
+    }
+    .containerLogo img {
+        width: 150px;
+    }
+    .containerLogo figcaption {
+        width: 150px;
+    }
+    /************
+    Fleche des navigations
+    ************/
+    .scroll-arrow {
+        display: none;
+    }
+    /**********************
+        Les cérises du café
+    ***********************/
+    .cerises .container,
+    .website .container {
+        flex-direction: column;
+    }
+    .cerises .container .imagesContainer,
+    .website .container .imagesContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header svg {
+        width: 300px;
+    }
+    header .icons {
+        gap: 0 40px;
+    }
+    .reverseWave svg path {
+        transform: translateY(20px)
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    header h2 {
+        font-size: 1.5em;
+        margin: 40px 0 30px 0;
+    }
+    header .icons i {
+        font-size: 2em;
+    }
+    header .icons span:hover i {
+        cursor: pointer;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+    header .top-left {
+        top: -8.5%;
+        left: -30%;
+    }
+    header .bottom-right {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+    }
+    header .top-right {
+        opacity: 0;
+        transition: all .2s ease-in-out;
+    }
+    header .bottom-left {
+        bottom: -7.5%;
+        right: -95%;
+    }
+    .imgContainer::before {
+        width: 40vh;
+        height: 40vh;
+    }
+    .about h3,
+    .skill h3,
+    .software h3,
+    .experience h3,
+    .creation h3,
+    .contact h3 {
+        font-size: 3em !important;
+    }
+    .about .container p {
+        font-size: 1.5em;
+    }
+    .about .imgContainer::before {
+        width: 20vh;
+        height: 20vh;
+    }
+    .reverseWave svg path {
+        transform: translateY(40px);
+    }
+    .software .imgContainer::before {
+        min-height: 150px;
+        min-width: 150px;
+        width: 15vh;
+        height: 15vh;
+    }
+    .experience ul {
+        margin-bottom: 0em;
+    }
+    .experience ul li {
+        font-size: 3.5em;
+    }
+    .experience ul li:first-child {
+        left: 35%;
+    }
+    .experience ul li:nth-child(2) {
+        left: 85%;
+    }
+    .experience ul li:nth-child(3) {
+        left: 135%;
+    }
+    .experience ul li:nth-child(4) {
+        left: 185%;
+    }
+    .experience ul li:nth-child(5) {
+        left: 235%;
+    }
+    /**************************
+            Mes créations
+    *****************************/
+    .creation svg {
+        flex: 1 1 50%
+    }
+    .creation svg:nth-child(4),
+    .creation svg:nth-child(5) {
+        flex: 1 0 50%;
+    }
+    /***************************
+            Contact
+    ***************************/
+    .contact form {
+        width: 95%;
+    }
+    .contact .bubble {
+        display: none;
+    }
+}

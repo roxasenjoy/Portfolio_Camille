@@ -1,0 +1,3 @@
+#Ignore les fichier suivants 
+.env
+app/vendor
